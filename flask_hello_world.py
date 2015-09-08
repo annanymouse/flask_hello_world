@@ -10,7 +10,11 @@ app = Flask(__name__)
 #@app.route("/hello")
 @app.route("/hello/<name>")
 def say_hi(name):
-    return render_template('base.html', my_string="Hello {}!".format(name.title()))
+    times = session.query(Mytime
+    times = times.order_by(Mytime.id.asc())
+    times = times.all()
+    
+    return render_template('base.html', my_string="Hello {}m it is {}!".format(name.title(), times=times))
 
 # @app.route("/hello/<name>")
 # def hi_person(name):
